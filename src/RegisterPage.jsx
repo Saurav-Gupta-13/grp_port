@@ -35,11 +35,11 @@ function RegisterPage() {
     try {
       await DataStore.save(
         new Register({
-          firstName:firstName,
-          lastName:lastName,
-          number:number,
-          mail:mail,
-          password:password
+          "firstName":firstName,
+          "lastName":lastName,
+          "number":number,
+          "mail":mail,
+          "password":password
 
         })
       );
