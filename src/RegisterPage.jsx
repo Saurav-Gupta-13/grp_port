@@ -98,7 +98,7 @@ function RegisterPage() {
           className="my-4 bg-[#ccd6f6] p-2"
           placeholder="Contact No."
           name="Cnumber"
-          type="number"
+          type="text"
           id="number"
           value={number}
           onChange={handleNumberChange}
