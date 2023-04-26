@@ -39,7 +39,7 @@ function RegisterPage() {
           "lastName":lastName,
           "number":number,
           "mail":mail,
-          "password":password
+          "password":password,
 
         })
       );
