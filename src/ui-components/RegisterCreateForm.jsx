@@ -46,7 +46,7 @@ export default function RegisterCreateForm(props) {
   const validations = {
     firstName: [],
     lastName: [],
-    number: [{ type: "Phone" }],
+    number: [],
     mail: [{ type: "Email" }],
     password: [],
   };
@@ -186,10 +186,13 @@ export default function RegisterCreateForm(props) {
         label="Number"
         isRequired={false}
         isReadOnly={false}
-        type="tel"
+        type="number"
+        step="any"
         value={number}
         onChange={(e) => {
-          let { value } = e.target;
+          let value = isNaN(parseInt(e.target.value))
+            ? e.target.value
+            : parseInt(e.target.value);
           if (onChange) {
             const modelFields = {
               firstName,

@@ -2,7 +2,8 @@ type Register @model @auth(rules: [{allow: public}]) {
   id: ID!
   firstName: String
   lastName: String
-  number: AWSPhone
+  number: Int
   mail: AWSEmail
   password: String
-} 
+}
+ 

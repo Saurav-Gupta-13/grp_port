@@ -15,14 +15,14 @@ export declare type ValidationFunction<T> = (value: T, validationResponse: Valid
 export declare type RegisterCreateFormInputValues = {
     firstName?: string;
     lastName?: string;
-    number?: string;
+    number?: number;
     mail?: string;
     password?: string;
 };
 export declare type RegisterCreateFormValidationValues = {
     firstName?: ValidationFunction<string>;
     lastName?: ValidationFunction<string>;
-    number?: ValidationFunction<string>;
+    number?: ValidationFunction<number>;
     mail?: ValidationFunction<string>;
     password?: ValidationFunction<string>;
 };
