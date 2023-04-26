@@ -17,6 +17,18 @@ function RegisterPage() {
     setLastName(event.target.value);
   };
 
+  const handleNumberChange = (event) => {
+    setLastName(event.target.value);
+  };
+
+  const handleMailChange = (event) => {
+    setLastName(event.target.value);
+  };
+
+  const handlepasswordChange = (event) => {
+    setLastName(event.target.value);
+  };
+
   const handleSubmit = async (event) => {
     event.preventDefault();
     // Do something with the form data, such as submitting it to a server
@@ -25,11 +37,18 @@ function RegisterPage() {
         new Register({
           firstName: firstName,
           lastName: lastName,
+          number:number,
+          mail:mail,
+          password:password
+
         })
       );
       console.log("Registration successful!");
       console.log("First Name: ", firstName);
       console.log("Last Name: ", lastName);
+      console.log("Contact: ", number);
+      console.log("Email: ", mail);
+      console.log("Password: ", password);
     } catch (error) {
       console.error("Error saving registration data:", error);
     }
@@ -82,7 +101,7 @@ function RegisterPage() {
           type="number"
           id="number"
           value={number}
-          onChange={handleLastNameChange}
+          onChange={handleNumberChange}
           required
         />
 
@@ -93,7 +112,7 @@ function RegisterPage() {
           type="email"
           id="mail"
           value={mail}
-          onChange={handleLastNameChange}
+          onChange={handleMailChange}
           required
         />
 
@@ -104,7 +123,7 @@ function RegisterPage() {
           type="password"
           id="password"
           value={password}
-          onChange={handleLastNameChange}
+          onChange={handlepasswordChange}
           required
         />
 

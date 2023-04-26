@@ -1,5 +1,5 @@
 {
-  "Description": "Root Stack for AWS Amplify Console",
+  "Description": "Root Stack for AWS Amplify CLI",
   "AWSTemplateFormatVersion": "2010-09-09",
   "Parameters": {
     "DeploymentBucketName": {
@@ -149,26 +149,6 @@
         },
         "RoleName": {
           "Ref": "UnauthRoleName"
-        }
-      }
-    },
-    "apiregister123": {
-      "Type": "AWS::CloudFormation::Stack",
-      "Properties": {
-        "TemplateURL": "https://s3.amazonaws.com/amplify-amplify12c485c018db4-staging-115056-deployment/amplify-cfn-templates/api/cloudformation-template.json",
-        "Parameters": {
-          "AppSyncApiName": "register123",
-          "DynamoDBBillingMode": "PAY_PER_REQUEST",
-          "DynamoDBEnableServerSideEncryption": false,
-          "authRoleName": {
-            "Ref": "AuthRoleName"
-          },
-          "unauthRoleName": {
-            "Ref": "UnauthRoleName"
-          },
-          "S3DeploymentBucket": "amplify-amplify12c485c018db4-staging-115056-deployment",
-          "S3DeploymentRootKey": "amplify-appsync-files/531fd81ad7d9f777d7fa16e420069af465aa53e2",
-          "env": "staging"
         }
       }
     }
