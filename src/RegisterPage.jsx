@@ -18,15 +18,15 @@ function RegisterPage() {
   };
 
   const handleNumberChange = (event) => {
-    setLastName(event.target.value);
+    setNumber(event.target.value);
   };
 
   const handleMailChange = (event) => {
-    setLastName(event.target.value);
+    setMail(event.target.value);
   };
 
   const handlepasswordChange = (event) => {
-    setLastName(event.target.value);
+    setPassword(event.target.value);
   };
 
   const handleSubmit = async (event) => {
