@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import { DataStore } from "@aws-amplify/datastore";
-import { Register } from "./models";
+import { DataStore } from '@aws-amplify/datastore';
+import { Register } from './models';
 
 function RegisterPage() {
   const [firstName, setFirstName] = useState("");
@@ -35,8 +35,8 @@ function RegisterPage() {
     try {
       await DataStore.save(
         new Register({
-          firstName: firstName,
-          lastName: lastName,
+          firstName:firstName,
+          lastName:lastName,
           number:number,
           mail:mail,
           password:password
