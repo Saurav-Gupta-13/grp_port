@@ -35,14 +35,13 @@ function RegisterPage() {
     try {
       await DataStore.save(
         new Register({
-          "firstName":firstName,
-          "lastName":lastName,
-          "number":number,
-          "mail":mail,
-          "password":password,
-
-        })
-      );
+        "firstName": "Lorem ipsum dolor sit amet",
+        "lastName": "Lorem ipsum dolor sit amet",
+        "number": "(555) 123-6789",
+        "mail": "test12346789@testemailtestemail.com",
+        "password": "Lorem ipsum dolor sit amet"
+      })
+    );
       console.log("Registration successful!");
       console.log("First Name: ", firstName);
       console.log("Last Name: ", lastName);

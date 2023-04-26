@@ -23,11 +23,11 @@
             }
           ],
           "defaultAuthentication": {
+            "authenticationType": "API_KEY",
             "apiKeyConfig": {
               "apiKeyExpirationDays": 30,
               "description": "api key description"
-            },
-            "authenticationType": "API_KEY"
+            }
           }
         },
         "GraphQLAPIIdOutput": "oyt7npqojjbd5p34ybhin3wdd4",
@@ -36,11 +36,12 @@
       },
       "providerPlugin": "awscloudformation",
       "service": "AppSync",
-      "lastPushTimeStamp": "2023-04-26T12:38:26.377Z",
+      "lastPushTimeStamp": "2023-04-26T13:03:15.681Z",
       "providerMetadata": {
         "s3TemplateURL": "https://s3.amazonaws.com/amplify-amplify1ce5874a6ea24-staging-103736-deployment/amplify-cfn-templates/api/cloudformation-template.json",
         "logicalId": "apigrpport"
-      }
+      },
+      "lastPushDirHash": "FVqXAd5Bt1uA6WZKCEnRsT1vwOc="
     }
   }
 }
