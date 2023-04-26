@@ -24,6 +24,27 @@ export const schema = {
                     "isRequired": false,
                     "attributes": []
                 },
+                "number": {
+                    "name": "number",
+                    "isArray": false,
+                    "type": "AWSPhone",
+                    "isRequired": false,
+                    "attributes": []
+                },
+                "mail": {
+                    "name": "mail",
+                    "isArray": false,
+                    "type": "AWSEmail",
+                    "isRequired": false,
+                    "attributes": []
+                },
+                "password": {
+                    "name": "password",
+                    "isArray": false,
+                    "type": "String",
+                    "isRequired": false,
+                    "attributes": []
+                },
                 "createdAt": {
                     "name": "createdAt",
                     "isArray": false,
@@ -69,6 +90,6 @@ export const schema = {
     },
     "enums": {},
     "nonModels": {},
-    "codegenVersion": "3.4.0",
-    "version": "b9f64377f54b3949702b1eabf5190a9c"
+    "codegenVersion": "3.4.2",
+    "version": "3fdfb40ca94615728b8c84b75db8d819"
 };

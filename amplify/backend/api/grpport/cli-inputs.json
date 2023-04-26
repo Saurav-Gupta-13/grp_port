@@ -1,13 +1,12 @@
 {
   "version": 1,
   "serviceConfiguration": {
-    "apiName": "register123",
+    "apiName": "grpport",
     "serviceName": "AppSync",
     "defaultAuthType": {
       "mode": "API_KEY",
-      "expirationTime": 30,
-      "apiKeyExpirationDate": "2023-05-22T03:33:18.449Z",
-      "keyDescription": "api key description"
+      "keyDescription": "api key description",
+      "expirationTime": 30
     },
     "additionalAuthTypes": [
       {

@@ -152,12 +152,12 @@
         }
       }
     },
-    "apiregister123": {
+    "apigrpport": {
       "Type": "AWS::CloudFormation::Stack",
       "Properties": {
-        "TemplateURL": "https://s3.amazonaws.com/amplify-amplify12c485c018db4-staging-115056-deployment/amplify-cfn-templates/api/cloudformation-template.json",
+        "TemplateURL": "https://s3.amazonaws.com/amplify-amplify1ce5874a6ea24-staging-103736-deployment/amplify-cfn-templates/api/cloudformation-template.json",
         "Parameters": {
-          "AppSyncApiName": "register123",
+          "AppSyncApiName": "grpport",
           "DynamoDBBillingMode": "PAY_PER_REQUEST",
           "DynamoDBEnableServerSideEncryption": false,
           "authRoleName": {
@@ -166,8 +166,8 @@
           "unauthRoleName": {
             "Ref": "UnauthRoleName"
           },
-          "S3DeploymentBucket": "amplify-amplify12c485c018db4-staging-115056-deployment",
-          "S3DeploymentRootKey": "amplify-appsync-files/531fd81ad7d9f777d7fa16e420069af465aa53e2",
+          "S3DeploymentBucket": "amplify-amplify1ce5874a6ea24-staging-103736-deployment",
+          "S3DeploymentRootKey": "amplify-appsync-files/2b2a802cd4848c87ca0e264774b6dc131149debe",
           "env": "staging"
         }
       }

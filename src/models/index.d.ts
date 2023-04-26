@@ -14,6 +14,9 @@ type EagerRegister = {
   readonly id: string;
   readonly firstName?: string | null;
   readonly lastName?: string | null;
+  readonly number?: string | null;
+  readonly mail?: string | null;
+  readonly password?: string | null;
   readonly createdAt?: string | null;
   readonly updatedAt?: string | null;
 }
@@ -26,6 +29,9 @@ type LazyRegister = {
   readonly id: string;
   readonly firstName?: string | null;
   readonly lastName?: string | null;
+  readonly number?: string | null;
+  readonly mail?: string | null;
+  readonly password?: string | null;
   readonly createdAt?: string | null;
   readonly updatedAt?: string | null;
 }
