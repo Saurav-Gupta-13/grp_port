@@ -1,9 +1,10 @@
 import React, { useState } from "react";
 import { DataStore } from '@aws-amplify/datastore';
 import { Register } from './models';
+import { Link, useNavigate } from "react-router-dom";
 
 function RegisterPage() {
-  const [firstName, setFirstName] = useState("");
+  const [firstName, setFirstName] = useState(""); 
   const [lastName, setLastName] = useState("");
   const [mail, setMail] = useState("");
   const [password, setPassword] = useState("");
@@ -124,6 +125,11 @@ function RegisterPage() {
         >
           Register
         </button>
+        <center>
+          <h2 className="text-2xl sm:7xl font-bold text-[#8892b0]">
+            Already registered? <Link to="/Login">Log in</Link>
+          </h2>
+        </center>
       </form>
     </div>
   );
