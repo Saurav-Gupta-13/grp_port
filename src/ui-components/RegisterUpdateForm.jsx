@@ -26,13 +26,11 @@ export default function RegisterUpdateForm(props) {
   const initialValues = {
     firstName: "",
     lastName: "",
-    number: "",
     mail: "",
     password: "",
   };
   const [firstName, setFirstName] = React.useState(initialValues.firstName);
   const [lastName, setLastName] = React.useState(initialValues.lastName);
-  const [number, setNumber] = React.useState(initialValues.number);
   const [mail, setMail] = React.useState(initialValues.mail);
   const [password, setPassword] = React.useState(initialValues.password);
   const [errors, setErrors] = React.useState({});
@@ -42,7 +40,6 @@ export default function RegisterUpdateForm(props) {
       : initialValues;
     setFirstName(cleanValues.firstName);
     setLastName(cleanValues.lastName);
-    setNumber(cleanValues.number);
     setMail(cleanValues.mail);
     setPassword(cleanValues.password);
     setErrors({});
@@ -61,7 +58,6 @@ export default function RegisterUpdateForm(props) {
   const validations = {
     firstName: [],
     lastName: [],
-    number: [],
     mail: [{ type: "Email" }],
     password: [],
   };
@@ -93,7 +89,6 @@ export default function RegisterUpdateForm(props) {
         let modelFields = {
           firstName,
           lastName,
-          number,
           mail,
           password,
         };
@@ -153,7 +148,6 @@ export default function RegisterUpdateForm(props) {
             const modelFields = {
               firstName: value,
               lastName,
-              number,
               mail,
               password,
             };
@@ -181,7 +175,6 @@ export default function RegisterUpdateForm(props) {
             const modelFields = {
               firstName,
               lastName: value,
-              number,
               mail,
               password,
             };
@@ -199,34 +192,6 @@ export default function RegisterUpdateForm(props) {
         {...getOverrideProps(overrides, "lastName")}
       ></TextField>
       <TextField
-        label="Number"
-        isRequired={false}
-        isReadOnly={false}
-        value={number}
-        onChange={(e) => {
-          let { value } = e.target;
-          if (onChange) {
-            const modelFields = {
-              firstName,
-              lastName,
-              number: value,
-              mail,
-              password,
-            };
-            const result = onChange(modelFields);
-            value = result?.number ?? value;
-          }
-          if (errors.number?.hasError) {
-            runValidationTasks("number", value);
-          }
-          setNumber(value);
-        }}
-        onBlur={() => runValidationTasks("number", number)}
-        errorMessage={errors.number?.errorMessage}
-        hasError={errors.number?.hasError}
-        {...getOverrideProps(overrides, "number")}
-      ></TextField>
-      <TextField
         label="Mail"
         isRequired={false}
         isReadOnly={false}
@@ -237,7 +202,6 @@ export default function RegisterUpdateForm(props) {
             const modelFields = {
               firstName,
               lastName,
-              number,
               mail: value,
               password,
             };
@@ -265,7 +229,6 @@ export default function RegisterUpdateForm(props) {
             const modelFields = {
               firstName,
               lastName,
-              number,
               mail,
               password: value,
             };

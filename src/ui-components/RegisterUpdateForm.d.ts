@@ -16,14 +16,12 @@ export declare type ValidationFunction<T> = (value: T, validationResponse: Valid
 export declare type RegisterUpdateFormInputValues = {
     firstName?: string;
     lastName?: string;
-    number?: string;
     mail?: string;
     password?: string;
 };
 export declare type RegisterUpdateFormValidationValues = {
     firstName?: ValidationFunction<string>;
     lastName?: ValidationFunction<string>;
-    number?: ValidationFunction<string>;
     mail?: ValidationFunction<string>;
     password?: ValidationFunction<string>;
 };
@@ -32,7 +30,6 @@ export declare type RegisterUpdateFormOverridesProps = {
     RegisterUpdateFormGrid?: PrimitiveOverrideProps<GridProps>;
     firstName?: PrimitiveOverrideProps<TextFieldProps>;
     lastName?: PrimitiveOverrideProps<TextFieldProps>;
-    number?: PrimitiveOverrideProps<TextFieldProps>;
     mail?: PrimitiveOverrideProps<TextFieldProps>;
     password?: PrimitiveOverrideProps<TextFieldProps>;
 } & EscapeHatchProps;
