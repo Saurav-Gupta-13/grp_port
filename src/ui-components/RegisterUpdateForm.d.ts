@@ -16,13 +16,11 @@ export declare type ValidationFunction<T> = (value: T, validationResponse: Valid
 export declare type RegisterUpdateFormInputValues = {
     firstName?: string;
     lastName?: string;
-    mail?: string;
     password?: string;
 };
 export declare type RegisterUpdateFormValidationValues = {
     firstName?: ValidationFunction<string>;
     lastName?: ValidationFunction<string>;
-    mail?: ValidationFunction<string>;
     password?: ValidationFunction<string>;
 };
 export declare type PrimitiveOverrideProps<T> = Partial<T> & React.DOMAttributes<HTMLDivElement>;
@@ -30,7 +28,6 @@ export declare type RegisterUpdateFormOverridesProps = {
     RegisterUpdateFormGrid?: PrimitiveOverrideProps<GridProps>;
     firstName?: PrimitiveOverrideProps<TextFieldProps>;
     lastName?: PrimitiveOverrideProps<TextFieldProps>;
-    mail?: PrimitiveOverrideProps<TextFieldProps>;
     password?: PrimitiveOverrideProps<TextFieldProps>;
 } & EscapeHatchProps;
 export declare type RegisterUpdateFormProps = React.PropsWithChildren<{

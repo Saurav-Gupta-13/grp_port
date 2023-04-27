@@ -6,7 +6,7 @@ function RegisterPage() {
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
   
-  const [mail, setMail] = useState("");
+  
   const [password, setPassword] = useState("");
 
   const handleFirstNameChange = (event) => {
@@ -19,9 +19,7 @@ function RegisterPage() {
 
  
 
-  const handleMailChange = (event) => {
-    setMail(event.target.value);
-  };
+  
 
   const handlepasswordChange = (event) => {
     setPassword(event.target.value);
@@ -35,7 +33,7 @@ function RegisterPage() {
         new Register({
           "firstName":firstName,
           "lastName":lastName,
-          "mail":mail,
+         
           "password":password,
 
         })
@@ -93,16 +91,6 @@ function RegisterPage() {
 
        
 
-        <input
-          className="my-4 bg-[#ccd6f6] p-2"
-          placeholder="Mail Id"
-          name="Mail"
-          type="email"
-          id="mail"
-          value={mail}
-          onChange={handleMailChange}
-          required
-        />
 
         <input
           className="my-4 bg-[#ccd6f6] p-2"
