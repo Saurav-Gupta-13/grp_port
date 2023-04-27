@@ -41,7 +41,7 @@ function RegisterPage() {
         new Register({
           "firstName":firstName,
           "lastName":lastName,
-          "number":number,
+          "number":parsedNumber,
           "mail":mail,
           "password":password,
 
