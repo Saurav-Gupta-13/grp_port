@@ -17,14 +17,12 @@ export declare type RegisterCreateFormInputValues = {
     lastName?: string;
     mail?: string;
     password?: string;
-    number?: string;
 };
 export declare type RegisterCreateFormValidationValues = {
     firstName?: ValidationFunction<string>;
     lastName?: ValidationFunction<string>;
     mail?: ValidationFunction<string>;
     password?: ValidationFunction<string>;
-    number?: ValidationFunction<string>;
 };
 export declare type PrimitiveOverrideProps<T> = Partial<T> & React.DOMAttributes<HTMLDivElement>;
 export declare type RegisterCreateFormOverridesProps = {
@@ -33,7 +31,6 @@ export declare type RegisterCreateFormOverridesProps = {
     lastName?: PrimitiveOverrideProps<TextFieldProps>;
     mail?: PrimitiveOverrideProps<TextFieldProps>;
     password?: PrimitiveOverrideProps<TextFieldProps>;
-    number?: PrimitiveOverrideProps<TextFieldProps>;
 } & EscapeHatchProps;
 export declare type RegisterCreateFormProps = React.PropsWithChildren<{
     overrides?: RegisterCreateFormOverridesProps | undefined | null;
