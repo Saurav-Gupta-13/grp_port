@@ -5,9 +5,9 @@ import { Register } from './models';
 function RegisterPage() {
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
-  
-  
+  const [mail, setMail] = useState("");
   const [password, setPassword] = useState("");
+  const [number, setNumber] = useState("");
 
   const handleFirstNameChange = (event) => {
     setFirstName(event.target.value);
@@ -17,9 +17,20 @@ function RegisterPage() {
     setLastName(event.target.value);
   };
 
+  const handleMailChange = (event) => {
+    setMail(event.target.value);
+  };
+
   const handlepasswordChange = (event) => {
     setPassword(event.target.value);
   };
+
+  
+ const handleNumberChange = (event) => {
+  setNumber(event.target.value);
+};
+
+
 
   const handleSubmit = async (event) => {
     event.preventDefault();
@@ -29,14 +40,18 @@ function RegisterPage() {
         new Register({
           "firstName":firstName,
           "lastName":lastName,
+          "mail":mail,
           "password":password,
+          "number":number,
 
         })
       );
       console.log("Registration successful!");
       console.log("First Name: ", firstName);
       console.log("Last Name: ", lastName);
+      console.log("Mail: ", mail);
       console.log("Password: ", password);
+      console.log("Contact: ", number);
     } catch (error) {
       console.error("Error saving registration data:", error);
     }
@@ -82,6 +97,18 @@ function RegisterPage() {
           required
         />
 
+        
+<input
+          className="my-4 bg-[#ccd6f6] p-2"
+          placeholder="Mail Id"
+          name="Mail"
+          type="email"
+          id="mail"
+          value={mail}
+          onChange={handleMailChange}
+          required
+        />
+
         <input
           className="my-4 bg-[#ccd6f6] p-2"
           placeholder="Password"
@@ -90,6 +117,17 @@ function RegisterPage() {
           id="password"
           value={password}
           onChange={handlepasswordChange}
+          required
+        />
+
+<input
+          className="my-4 bg-[#ccd6f6] p-2"
+          placeholder="Contact No."
+          name="Cnumber"
+          type="text"
+          id="number"
+          value={number}
+          onChange={handleNumberChange}
           required
         />
 

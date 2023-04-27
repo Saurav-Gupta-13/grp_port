@@ -25,22 +25,30 @@ export default function RegisterCreateForm(props) {
   const initialValues = {
     firstName: "",
     lastName: "",
+    mail: "",
     password: "",
+    number: "",
   };
   const [firstName, setFirstName] = React.useState(initialValues.firstName);
   const [lastName, setLastName] = React.useState(initialValues.lastName);
+  const [mail, setMail] = React.useState(initialValues.mail);
   const [password, setPassword] = React.useState(initialValues.password);
+  const [number, setNumber] = React.useState(initialValues.number);
   const [errors, setErrors] = React.useState({});
   const resetStateValues = () => {
     setFirstName(initialValues.firstName);
     setLastName(initialValues.lastName);
+    setMail(initialValues.mail);
     setPassword(initialValues.password);
+    setNumber(initialValues.number);
     setErrors({});
   };
   const validations = {
     firstName: [],
     lastName: [],
+    mail: [{ type: "Email" }],
     password: [],
+    number: [],
   };
   const runValidationTasks = async (
     fieldName,
@@ -70,7 +78,9 @@ export default function RegisterCreateForm(props) {
         let modelFields = {
           firstName,
           lastName,
+          mail,
           password,
+          number,
         };
         const validationResponses = await Promise.all(
           Object.keys(validations).reduce((promises, fieldName) => {
@@ -127,7 +137,9 @@ export default function RegisterCreateForm(props) {
             const modelFields = {
               firstName: value,
               lastName,
+              mail,
               password,
+              number,
             };
             const result = onChange(modelFields);
             value = result?.firstName ?? value;
@@ -153,7 +165,9 @@ export default function RegisterCreateForm(props) {
             const modelFields = {
               firstName,
               lastName: value,
+              mail,
               password,
+              number,
             };
             const result = onChange(modelFields);
             value = result?.lastName ?? value;
@@ -169,6 +183,34 @@ export default function RegisterCreateForm(props) {
         {...getOverrideProps(overrides, "lastName")}
       ></TextField>
       <TextField
+        label="Mail"
+        isRequired={false}
+        isReadOnly={false}
+        value={mail}
+        onChange={(e) => {
+          let { value } = e.target;
+          if (onChange) {
+            const modelFields = {
+              firstName,
+              lastName,
+              mail: value,
+              password,
+              number,
+            };
+            const result = onChange(modelFields);
+            value = result?.mail ?? value;
+          }
+          if (errors.mail?.hasError) {
+            runValidationTasks("mail", value);
+          }
+          setMail(value);
+        }}
+        onBlur={() => runValidationTasks("mail", mail)}
+        errorMessage={errors.mail?.errorMessage}
+        hasError={errors.mail?.hasError}
+        {...getOverrideProps(overrides, "mail")}
+      ></TextField>
+      <TextField
         label="Password"
         isRequired={false}
         isReadOnly={false}
@@ -179,7 +221,9 @@ export default function RegisterCreateForm(props) {
             const modelFields = {
               firstName,
               lastName,
+              mail,
               password: value,
+              number,
             };
             const result = onChange(modelFields);
             value = result?.password ?? value;
@@ -193,6 +237,38 @@ export default function RegisterCreateForm(props) {
         errorMessage={errors.password?.errorMessage}
         hasError={errors.password?.hasError}
         {...getOverrideProps(overrides, "password")}
+      ></TextField>
+      <TextField
+        label="Number"
+        isRequired={false}
+        isReadOnly={false}
+        type="number"
+        step="any"
+        value={number}
+        onChange={(e) => {
+          let value = isNaN(parseInt(e.target.value))
+            ? e.target.value
+            : parseInt(e.target.value);
+          if (onChange) {
+            const modelFields = {
+              firstName,
+              lastName,
+              mail,
+              password,
+              number: value,
+            };
+            const result = onChange(modelFields);
+            value = result?.number ?? value;
+          }
+          if (errors.number?.hasError) {
+            runValidationTasks("number", value);
+          }
+          setNumber(value);
+        }}
+        onBlur={() => runValidationTasks("number", number)}
+        errorMessage={errors.number?.errorMessage}
+        hasError={errors.number?.hasError}
+        {...getOverrideProps(overrides, "number")}
       ></TextField>
       <Flex
         justifyContent="space-between"
