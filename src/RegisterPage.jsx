@@ -18,7 +18,11 @@ function RegisterPage() {
   };
 
   const handleNumberChange = (event) => {
-    setNumber(event.target.value);
+    // Parse the input value to a number
+    const parsedNumber = parseFloat(event.target.value);
+  
+    // Update the state with the parsed number
+    setNumber(parsedNumber);
   };
 
   const handleMailChange = (event) => {
