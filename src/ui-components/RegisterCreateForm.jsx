@@ -47,8 +47,8 @@ export default function RegisterCreateForm(props) {
     firstName: [],
     lastName: [],
     mail: [{ type: "Email" }],
-    password: [{ type: "Phone" }],
-    number: [],
+    password: [],
+    number: [{ type: "Phone" }],
   };
   const runValidationTasks = async (
     fieldName,
@@ -214,7 +214,6 @@ export default function RegisterCreateForm(props) {
         label="Password"
         isRequired={false}
         isReadOnly={false}
-        type="tel"
         value={password}
         onChange={(e) => {
           let { value } = e.target;
@@ -243,13 +242,10 @@ export default function RegisterCreateForm(props) {
         label="Number"
         isRequired={false}
         isReadOnly={false}
-        type="number"
-        step="any"
+        type="tel"
         value={number}
         onChange={(e) => {
-          let value = isNaN(parseInt(e.target.value))
-            ? e.target.value
-            : parseInt(e.target.value);
+          let { value } = e.target;
           if (onChange) {
             const modelFields = {
               firstName,

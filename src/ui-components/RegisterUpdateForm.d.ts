@@ -18,14 +18,14 @@ export declare type RegisterUpdateFormInputValues = {
     lastName?: string;
     mail?: string;
     password?: string;
-    number?: number;
+    number?: string;
 };
 export declare type RegisterUpdateFormValidationValues = {
     firstName?: ValidationFunction<string>;
     lastName?: ValidationFunction<string>;
     mail?: ValidationFunction<string>;
     password?: ValidationFunction<string>;
-    number?: ValidationFunction<number>;
+    number?: ValidationFunction<string>;
 };
 export declare type PrimitiveOverrideProps<T> = Partial<T> & React.DOMAttributes<HTMLDivElement>;
 export declare type RegisterUpdateFormOverridesProps = {

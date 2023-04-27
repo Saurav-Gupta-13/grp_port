@@ -34,14 +34,14 @@ export const schema = {
                 "password": {
                     "name": "password",
                     "isArray": false,
-                    "type": "AWSPhone",
+                    "type": "String",
                     "isRequired": false,
                     "attributes": []
                 },
                 "number": {
                     "name": "number",
                     "isArray": false,
-                    "type": "Int",
+                    "type": "AWSPhone",
                     "isRequired": false,
                     "attributes": []
                 },
@@ -91,5 +91,5 @@ export const schema = {
     "enums": {},
     "nonModels": {},
     "codegenVersion": "3.4.2",
-    "version": "8c6f074f5daefe5b0328bb0565bd4154"
+    "version": "3fdfb40ca94615728b8c84b75db8d819"
 };
