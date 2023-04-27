@@ -17,10 +17,6 @@ function RegisterPage() {
     setLastName(event.target.value);
   };
 
- 
-
-  
-
   const handlepasswordChange = (event) => {
     setPassword(event.target.value);
   };
@@ -33,7 +29,6 @@ function RegisterPage() {
         new Register({
           "firstName":firstName,
           "lastName":lastName,
-         
           "password":password,
 
         })
