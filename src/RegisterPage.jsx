@@ -7,7 +7,6 @@ function RegisterPage() {
   const [lastName, setLastName] = useState("");
   const [mail, setMail] = useState("");
   const [password, setPassword] = useState("");
-  const [number, setNumber] = useState("");
 
   const handleFirstNameChange = (event) => {
     setFirstName(event.target.value);
@@ -26,9 +25,7 @@ function RegisterPage() {
   };
 
   
- const handleNumberChange = (event) => {
-  setNumber(event.target.value);
-};
+
 
 
 
@@ -42,7 +39,7 @@ function RegisterPage() {
           "lastName":lastName,
           "mail":mail,
           "password":password,
-          "number":number,
+
 
         })
       );
@@ -51,7 +48,6 @@ function RegisterPage() {
       console.log("Last Name: ", lastName);
       console.log("Mail: ", mail);
       console.log("Password: ", password);
-      console.log("Contact: ", number);
     } catch (error) {
       console.error("Error saving registration data:", error);
     }
@@ -120,16 +116,6 @@ function RegisterPage() {
           required
         />
 
-<input
-          className="my-4 bg-[#ccd6f6] p-2"
-          placeholder="Contact No."
-          name="Cnumber"
-          type="number"
-          id="number"
-          value={number}
-          onChange={handleNumberChange}
-          required
-        />
 
         <button
           className="text-white border-2 hover:bg-pink-400 hover:border-pink-400 px-4 py-3 my-8 mx-auto flex items-center"
