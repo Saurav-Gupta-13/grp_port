@@ -18,12 +18,8 @@ function RegisterPage() {
   };
 
   const handleNumberChange = (event) => {
-  // Parse the input value to a number
-  const parsedNumber = parseInt(event.target.value);
-
-  // Update the state with the parsed number
-  setNumber(parsedNumber);
-};
+    setNumber(event.target.value);
+  };
 
   const handleMailChange = (event) => {
     setMail(event.target.value);
@@ -39,11 +35,12 @@ function RegisterPage() {
     try {
       await DataStore.save(
         new Register({
-          firstName: firstName,
-          lastName: lastName,
-          number: number,
-          mail: mail,
-          password: password,
+          "firstName":firstName,
+          "lastName":lastName,
+          "number":number,
+          "mail":mail,
+          "password":password,
+
         })
       );
       console.log("Registration successful!");
