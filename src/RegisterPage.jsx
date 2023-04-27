@@ -82,9 +82,6 @@ function RegisterPage() {
           required
         />
 
-       
-
-
         <input
           className="my-4 bg-[#ccd6f6] p-2"
           placeholder="Password"
