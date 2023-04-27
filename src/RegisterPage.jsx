@@ -5,7 +5,7 @@ import { Register } from './models';
 function RegisterPage() {
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
-  const [number, setNumber] = useState("");
+  
   const [mail, setMail] = useState("");
   const [password, setPassword] = useState("");
 
@@ -17,9 +17,7 @@ function RegisterPage() {
     setLastName(event.target.value);
   };
 
-  const handleNumberChange = (event) => {
-    setNumber(event.target.value);
-  };
+ 
 
   const handleMailChange = (event) => {
     setMail(event.target.value);
@@ -37,7 +35,6 @@ function RegisterPage() {
         new Register({
           "firstName":firstName,
           "lastName":lastName,
-          "number":number,
           "mail":mail,
           "password":password,
 
@@ -46,7 +43,7 @@ function RegisterPage() {
       console.log("Registration successful!");
       console.log("First Name: ", firstName);
       console.log("Last Name: ", lastName);
-      console.log("Contact: ", number);
+      
       console.log("Email: ", mail);
       console.log("Password: ", password);
     } catch (error) {
@@ -94,16 +91,7 @@ function RegisterPage() {
           required
         />
 
-        <input
-          className="my-4 bg-[#ccd6f6] p-2"
-          placeholder="Contact No."
-          name="Cnumber"
-          type="text"
-          id="number"
-          value={number}
-          onChange={handleNumberChange}
-          required
-        />
+       
 
         <input
           className="my-4 bg-[#ccd6f6] p-2"
