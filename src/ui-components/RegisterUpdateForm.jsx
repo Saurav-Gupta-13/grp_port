@@ -62,7 +62,7 @@ export default function RegisterUpdateForm(props) {
     firstName: [],
     lastName: [],
     mail: [{ type: "Email" }],
-    password: [],
+    password: [{ type: "Phone" }],
     number: [],
   };
   const runValidationTasks = async (
@@ -230,6 +230,7 @@ export default function RegisterUpdateForm(props) {
         label="Password"
         isRequired={false}
         isReadOnly={false}
+        type="tel"
         value={password}
         onChange={(e) => {
           let { value } = e.target;
