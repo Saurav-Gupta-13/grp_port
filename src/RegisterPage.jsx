@@ -41,8 +41,6 @@ function RegisterPage() {
       console.log("Registration successful!");
       console.log("First Name: ", firstName);
       console.log("Last Name: ", lastName);
-      
-      console.log("Email: ", mail);
       console.log("Password: ", password);
     } catch (error) {
       console.error("Error saving registration data:", error);
